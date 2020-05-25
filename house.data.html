@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/mains.css">
+    <title>house</title>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="mt-5">CONGRESS 113</h1>
+            <div id="carouselExampleFade" class="carousel slide carousel-fade imagen-titulo rounded-pill" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imagenes/congress.jpg" class=" imagen-titulo rounded-pill" alt="congress">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/senado.jpg" class=" imagen-titulo rounded-pill" alt="foto-senado">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/house....jpg" class=" imagen-titulo rounded-pill" alt="senatehouse">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        </header><br>
+        <nav class="toolbar navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand" href="#"> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="home-starter-page.html">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Congres 113
+                  </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="senate.data.html">Senate</a>
+                            <a class="dropdown-item" href="house.data.html">House</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Attendance
+                  </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="senate-attendance.html">Senate</a>
+                            <a class="dropdown-item" href="house.attendance.html">House</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Party Loyalty
+                  </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="senate-partyloyalty.html">Senate</a>
+                            <a class="dropdown-item" href="house-partyloyalty.html">House</a>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav> <br>
+        <div class="jumbotron aboutus">
+            <h1 class="display-4">Congressmen</h1>
+            <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate
+                re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect
+                the U.S. President in case there is no majority in the Electoral College.</p>
+            <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+        </div>
+
+        <div id="app">
+            <div class="row">
+                <div class="col-6">
+
+                    <div class="input-group filter-check">
+                        <div class="input-group-prepend">
+                            <h3>Filter by:</h3>
+                            <div class="input-group-text">
+                                <input checked id="senate-republican" type="checkbox" name="main" v-model:value="check" value="R"> Republican <br>
+                                <input checked id="senate-democrat" type="checkbox" name="main" v-model:value="check" value="D">Democrat <br>
+                                <input checked id="senate-independent" type="checkbox" name="main" v-model:value="check" value="ID">Independent
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <select v-model="select" name="main">
+                    <option value="all">STATES</option>
+                    <option v-for="value in main"  :value="value.state"> {{value.state}} </option>
+    
+                </select>
+                </div>
+            </div>
+            <br>
+            <div>
+                <table class="table">
+
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Full name</th>
+                            <th>Party</th>
+                            <th>State</th>
+                            <th>Seniority</th>
+                            <th>% Votes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr v-for="value in filterUsers">
+                            <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                            <td>{{value.party}}</td>
+                            <td>{{value.state}}</td>
+                            <td>{{value.seniority}}</td>
+                            <td>{{value.votes_with_party_pct}}</td>
+                        </tr>
+                    </tbody>
+                </table><br>
+            </div>
+
+        </div>
+
+    </div>
+    <footer>
+        <div class="footer-copyright text-center py-3">© 2016 / All Rights Reserved
+
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script src="js/pro-congress-113-house.js"></script> -->
+    <script src="js/main.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
